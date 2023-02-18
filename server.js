@@ -9,12 +9,12 @@ console.log(PORT)
 
 // ROUTES
 app.get('/', (req, res) => {
-    res.send('Welcome to an Awesome App about Breads!')
+    res.send('<h1>Welcome to an Awesome App about Breads!</h1>')
 })
 
 // BREADS
 const breadsController = require('./controllers/breads_controller.js')
-app.use('./breads', breadsController)
+app.use('/breads', breadsController)
 
 // LISTEN
 app.listen(PORT, () => {
