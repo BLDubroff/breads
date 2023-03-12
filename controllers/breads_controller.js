@@ -14,7 +14,6 @@ breads.get('/', (req, res) => {
       })
 })
 
-module.exports = breads
 
 // NEW
 breads.get('/new', (req, res) => {
@@ -45,6 +44,7 @@ breads.get('/:id', (req, res) => {
   Bread.findById(req.params.id)
       .populate('baker')
       .then(foundBread => {
+        console.log(foundBread)
           res.render('show', {
               bread: foundBread
           })
@@ -93,3 +93,4 @@ breads.put('/:id', (req, res) => {
 
 
 
+module.exports = breads
